@@ -15,10 +15,13 @@ public class PrincipalApp extends javax.swing.JFrame {
      * Creates new form PrincipalApp
      */
     UsuarioR elusuario;
+    Pago pagouser;
     public PrincipalApp() {
         initComponents();
         elusuario = new UsuarioR();
         add(elusuario);
+        pagouser = new Pago();
+        add(pagouser);
     }
 
     /**
@@ -36,6 +39,7 @@ public class PrincipalApp extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         usuario = new javax.swing.JMenuItem();
+        pagocrud = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +59,14 @@ public class PrincipalApp extends javax.swing.JFrame {
             }
         });
         jMenu2.add(usuario);
+
+        pagocrud.setText("Pago");
+        pagocrud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagocrudActionPerformed(evt);
+            }
+        });
+        jMenu2.add(pagocrud);
 
         jMenuBar1.add(jMenu2);
 
@@ -89,6 +101,13 @@ public class PrincipalApp extends javax.swing.JFrame {
         elusuario.setVisible(true);
         imagen.setVisible(false);
     }//GEN-LAST:event_usuarioActionPerformed
+
+    private void pagocrudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagocrudActionPerformed
+        // TODO add your handling code here:
+        pagouser.setVisible(true);
+        elusuario.setVisible(false);
+        imagen.setVisible(false);
+    }//GEN-LAST:event_pagocrudActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,6 +150,7 @@ public class PrincipalApp extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem pagocrud;
     private javax.swing.JMenuItem usuario;
     // End of variables declaration//GEN-END:variables
 }
