@@ -87,7 +87,7 @@ public class Pago extends javax.swing.JInternalFrame {
                 cn=con.getConnection();
                 st=cn.createStatement();
                 st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Usuario agregado exitosamente");
+                JOptionPane.showMessageDialog(null, "Pago agregado exitosamente");
                 limpiartabla();
             }catch(Exception ex){
             
@@ -147,9 +147,10 @@ public class Pago extends javax.swing.JInternalFrame {
                 st=cn.createStatement();
                 st.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO EXITOSAMENTE");
-                limpiartabla();
+                //limpiartabla();
             }catch(Exception ex){
                 ex.printStackTrace();
+                System.out.println("problems to delete");
             }
         }
     }

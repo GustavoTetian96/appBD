@@ -169,14 +169,16 @@ public class UsuarioR extends javax.swing.JInternalFrame {
         if(filaseleccionada==-1){
             JOptionPane.showMessageDialog(null, "SELECCIONE UNA FILA DE LA TABLA");
         }else{
-            
+           
             String sql="DELETE FROM usuario WHERE Id_usuario="+id+";";
+            
             try{
+                
                 cn=con.getConnection();
                 st=cn.createStatement();
                 st.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO EXITOSAMENTE");
-                limpiartabla();
+                //limpiartabla();
             }catch(Exception ex){
                 System.out.println("error al tratar de eliminar");
                 ex.printStackTrace();

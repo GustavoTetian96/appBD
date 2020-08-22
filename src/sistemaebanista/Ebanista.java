@@ -69,7 +69,7 @@ MyConexion con = new MyConexion();
         String datafecha = ""+año+"-"+mes+"-"+dia+"";
         
         
-        String sql = "UPDATE ebanista set Nombre ='"+name+"',Apellido='"+lastname+"',"+nocuenta+", fechaNacimientoeb='"+datafecha+",Disponibilidad='"+dispo+"',"+calif+" where id_usuario="+id+";";
+        String sql ="UPDATE ebanista set Nombre='"+name+"', Apellido = '"+lastname+"', NoCuenta="+nocuenta+", fechaNacimientoeb='"+datafecha+"',disponibilidad='"+dispo+"', calificacion ="+calif+" where Id_ebanista="+id+";";
         if(name.equals("")|| lastname.equals("")||lastname.equals("")){
             JOptionPane.showMessageDialog(null, "Hay algun campo vacio");
         }else{
