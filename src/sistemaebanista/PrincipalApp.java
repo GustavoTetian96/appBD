@@ -16,12 +16,15 @@ public class PrincipalApp extends javax.swing.JFrame {
      */
     UsuarioR elusuario;
     Pago pagouser;
+    Ebanista ebanistauser;
     public PrincipalApp() {
         initComponents();
         elusuario = new UsuarioR();
         add(elusuario);
         pagouser = new Pago();
         add(pagouser);
+        ebanistauser= new  Ebanista();
+        add(ebanistauser);
     }
 
     /**
@@ -40,6 +43,7 @@ public class PrincipalApp extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         usuario = new javax.swing.JMenuItem();
         pagocrud = new javax.swing.JMenuItem();
+        ebanistacrud = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +71,14 @@ public class PrincipalApp extends javax.swing.JFrame {
             }
         });
         jMenu2.add(pagocrud);
+
+        ebanistacrud.setText("Ebanista");
+        ebanistacrud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ebanistacrudActionPerformed(evt);
+            }
+        });
+        jMenu2.add(ebanistacrud);
 
         jMenuBar1.add(jMenu2);
 
@@ -109,6 +121,14 @@ public class PrincipalApp extends javax.swing.JFrame {
         imagen.setVisible(false);
     }//GEN-LAST:event_pagocrudActionPerformed
 
+    private void ebanistacrudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ebanistacrudActionPerformed
+        // TODO add your handling code here:
+        pagouser.setVisible(false);
+        elusuario.setVisible(false);
+        imagen.setVisible(false);
+        ebanistauser.setVisible(true);
+    }//GEN-LAST:event_ebanistacrudActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -145,6 +165,7 @@ public class PrincipalApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ebanistacrud;
     private javax.swing.JLabel imagen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
